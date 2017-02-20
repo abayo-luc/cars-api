@@ -13,9 +13,10 @@ class Api::V2::CarsController < ApplicationController
     @car = Car.find_by(id:params[:id])
   end
 
+
   def update
-    car = Car.find_by(id:params[:id])
-    car.update(identification_number: params[:identification_number], manufacturer: params[:manufacturer])
+    @car = Car.find_by(id:params[:id])
+    @car.update(identification_number: params[:identification_number], manufacturer: params[:manufacturer])
     render :show
   end
 
