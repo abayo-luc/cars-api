@@ -9,4 +9,5 @@ Rails.application.routes.draw do
       delete "/cars/:id", to:'cars#destroy'
     end
   end 
+  get "/", to:'vehicles#index'
 end

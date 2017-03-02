@@ -1,0 +1,19 @@
+<div ng-app="app">
+  <div ng-controller="apiCtrl" ng-init="setup()">
+  <h1>Number of Cars in the Store: {{cars.length}}</h1>
+    <div ng-repeat="car in cars">
+      <h4>{{car.manufacturer}}</h4>
+        <p>Identification N: {{car.identification_number}}</p>
+        <p>Registration N: {{car.id}}</p>
+      <button ng-click="deleteCar(car , $index)">Delete</button>
+      <h4>Update Car</h4>
+      ID N:<input ng-model="identificationNumber" ng-value="car.identification_number">
+      Manufacturer:<input ng-model="manufacturer" ng-value="car.manufacturer">
+      <button ng-click="updateCar(updatedIdentificationNumber, updatedManufacturer, $index)">Add New Car</button>
+    </div>
+    <h4>Add New Car</h4>
+    ID N:<input ng-model="identificationNumber">
+    Manufacturer:<input ng-model="manufacturer">
+    <button ng-click="addNewCar(identificationNumber, manufacturer)">Add New Car</button>
+  </div>
+</div>
